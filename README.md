@@ -92,6 +92,31 @@ node dist/cli.js ui --port 4173
 
 ---
 
+## Screenshots & Product Tour
+
+### 1. Release Readiness Overview
+The main console provides an immediate high-level release decision (`READY`, `READY_WITH_WARNINGS`, `BLOCKED`), overall score ring, mandatory quality gates checklist, and category breakdown.
+
+<p align="center">
+  <img src="docs/screenshots/dashboard-overview.png" width="100%" alt="ShipGuard Release Readiness Overview" />
+</p>
+
+### 2. Interactive Findings Explorer
+Inspect findings filtered by severity, category, or status. Review exact file coordinates, issue descriptions, and remediation code blocks. Acknowledge findings, accept calculated risks, or mark issues resolved.
+
+<p align="center">
+  <img src="docs/screenshots/findings-explorer.png" width="100%" alt="ShipGuard Findings Explorer" />
+</p>
+
+### 3. Historical Runs & Trend Tracking
+Track release quality scores over time, comparing execution durations, finding counts, and release state across continuous releases.
+
+<p align="center">
+  <img src="docs/screenshots/assessment-history.png" width="100%" alt="ShipGuard Assessment History" />
+</p>
+
+---
+
 ## Interactive Dashboard
 
 ShipGuard includes a zero-dependency embedded HTTP server serving a developer console:
