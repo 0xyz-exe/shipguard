@@ -1,0 +1,8 @@
+node_modules/
+dist/
+coverage/
+.shipguard/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db

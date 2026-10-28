@@ -1,0 +1,34 @@
+{
+  "$schema": "https://raw.githubusercontent.com/0xyz-exe/shipguard/main/schemas/shipguard-config.schema.json",
+  "version": 1,
+  "profile": "production",
+  "scoring": {
+    "security": 25,
+    "testing": 20,
+    "code_quality": 15,
+    "build": 15,
+    "dependencies": 10,
+    "cicd": 10,
+    "documentation": 5,
+    "hygiene": 0
+  },
+  "gates": {
+    "failOnCritical": true,
+    "failOnHigh": false,
+    "requireTests": true,
+    "requireBuild": true,
+    "requireSecurityScan": true,
+    "minimumScore": 80
+  },
+  "coverage": {
+    "enabled": true,
+    "minimumPercentage": 70
+  },
+  "exclusions": [
+    "node_modules/**",
+    "dist/**",
+    "coverage/**",
+    ".git/**",
+    ".shipguard/**"
+  ]
+}

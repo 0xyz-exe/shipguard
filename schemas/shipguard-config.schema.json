@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ShipGuardConfig",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "version": { "type": "integer", "default": 1 },
+    "profile": {
+      "type": "string",
+      "enum": ["standard", "production", "strict", "lax"],
+      "default": "production"
+    },
+    "scoring": {
+      "type": "object",
+      "properties": {
+        "security": { "type": "number", "minimum": 0, "maximum": 100, "default": 25 },
+        "testing": { "type": "number", "minimum": 0, "maximum": 100, "default": 20 },
+        "code_quality": { "type": "number", "minimum": 0, "maximum": 100, "default": 15 },
+        "build": { "type": "number", "minimum": 0, "maximum": 100, "default": 15 },
+        "dependencies": { "type": "number", "minimum": 0, "maximum": 100, "default": 10 },
+        "cicd": { "type": "number", "minimum": 0, "maximum": 100, "default": 10 },
+        "documentation": { "type": "number", "minimum": 0, "maximum": 100, "default": 5 },
+        "hygiene": { "type": "number", "minimum": 0, "maximum": 100, "default": 0 }
+      }
+    },
+    "gates": {
+      "type": "object",
+      "properties": {
+        "failOnCritical": { "type": "boolean", "default": true },
+        "failOnHigh": { "type": "boolean", "default": false },
+        "requireTests": { "type": "boolean", "default": true },
+        "requireBuild": { "type": "boolean", "default": true },
+        "requireSecurityScan": { "type": "boolean", "default": true },
+        "minimumScore": { "type": "number", "minimum": 0, "maximum": 100, "default": 80 }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "properties": {
+        "enabled": { "type": "boolean", "default": true },
+        "minimumPercentage": { "type": "number", "minimum": 0, "maximum": 100, "default": 70 }
+      }
+    },
+    "exclusions": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

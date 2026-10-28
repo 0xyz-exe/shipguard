@@ -1,0 +1,62 @@
+{
+  "name": "shipguard",
+  "version": "1.0.0",
+  "description": "Software Release Readiness & Quality Checker. Know your release is ready before you ship.",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "shipguard": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "schemas"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "start": "node ./dist/cli.js"
+  },
+  "keywords": [
+    "release-readiness",
+    "quality-gates",
+    "devops",
+    "security-scanner",
+    "code-quality",
+    "ci-cd",
+    "sarif",
+    "shipguard",
+    "cli"
+  ],
+  "author": "0xyz-exe",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0xyz-exe/shipguard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0xyz-exe/shipguard/issues"
+  },
+  "homepage": "https://github.com/0xyz-exe/shipguard#readme",
+  "packageManager": "pnpm@12.15.0",
+  "type": "module",
+  "dependencies": {
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsup": "^9.0.0",
+    "typescript": "5.8.2",
+    "vitest": "^5.0.5"
+  }
+}
